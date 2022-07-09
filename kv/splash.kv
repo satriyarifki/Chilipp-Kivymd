@@ -1,0 +1,32 @@
+<Splash>:
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+    Image:
+        source: "assets\img\Logo CHilipp.png"
+        size_hint: None, None
+        pos_hint: {'center_x': 0.5,'center_y': 0.87}
+        allow_stretch:
+    Image:
+        source: "assets\img\splash.jpg"
+        size_hint: 1, 0.5
+        pos_hint: {'center_x': 0.5,'center_y': 0.55}
+        allow_stretch:
+    MDLabel:
+        text: "Apa itu Chilipp ?"
+        color: 
+        halign: "center"
+        pos_hint: {'center_x': 0.23, 'center_y': 0.3}
+    MDLabel:
+        text: "Chillip adalah layanan prediksi harga cabai rawit platform mobile."
+        color: ("#999999")
+        font_size: "12sp"
+        size_hint_x: 0.65
+        pos_hint: {'center_x': 0.4, 'center_y': 0.25}
+    MDFillRoundFlatButton:
+        text: "Lanjut"
+        size_hint: 0.4, 0.05
+        pos_hint: {'center_x': 0.72,'center_y': 0.1}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = 'login'
+

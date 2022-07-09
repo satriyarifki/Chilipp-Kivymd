@@ -1,0 +1,32 @@
+<Login>:
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {'center_x': 0.1,'center_y': 0.9}
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "splash"
+    MDLabel:
+        text: "Masuk"
+        color:
+        halign: "center"
+        font_size: "20sp"
+        font_style: "Body1"
+        pos_hint: {'center_x': 0.22,'center_y': 0.7}
+    MDTextField:
+        hint_text: "Email Anda"
+        max_text_length: 30
+        helper_text: "Email"
+        mode: "round"
+        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        size_hint: 0.6, 0.06
+    MDTextField:
+        mode: "round"
+        size_hint_x: 0.6
+        hint_text: "password"
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        icon_right: "eye-off"
+        helper_text: "Password"
+        password: True
