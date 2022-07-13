@@ -1,0 +1,65 @@
+<Home>:
+    md_bg_color: 1,1,1,1
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: ("#3271F9")
+        size_hint_y: 0.45
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+    MDLabel:
+        text: "Hai, Pengguna"
+        color: 1,1,1,1
+        halign: "center"
+        font_size: "12sp"
+        pos_hint: {'center_x': 0.15, 'center_y': 0.97}
+
+    MDLabel:
+        text: "Volume"
+        color: ("#dbdbdb")
+        halign: "center"
+        font_size: "15sp"
+        pos_hint: {'center_y': 0.9}
+        
+
+    MDLabel:
+        text: "126,567,565.493"
+        color: 1,1,1,1
+        halign: "center"
+        font_size: "25sp"
+        pos_hint: {'center_y': 0.85}
+
+
+    MDGridLayout:
+        cols: 1
+        rows: 3
+        size_hint_y: None
+        height: root.height / 1.4
+        padding: "30dp"
+        spacing: '20dp'
+
+        ShadowCard:
+            elevation: 5
+            radius: 20
+            size_hint: 1, 1
+            on_release:
+                root.manager.transition.direction = "left" 
+                root.manager.current = 'cabaidet'
+            GridLayout:
+                cols: 1
+                rows: 2
+                spacing: '-20dp'
+                Image:
+                    source: "assets\img\cabe.png"
+                MDLabel:
+                    halign: 'center'
+                    text: "Cabai Rawit"
+                    font_style: "H6"
+                    
+                        
+                
+        ShadowCard:
+            elevation: 5
+            radius: 20
+        ShadowCard:
+            elevation: 5
+            radius: 20

@@ -1,0 +1,114 @@
+<Cabaidet>:
+    orientation: 'vertical'
+    md_bg_color: 1,1,1,1
+
+    MDIconButton:
+        icon: 'arrow-left'
+        custom_color: ("#3271F9")
+        pos_hint: {'center_x': 0.1,'center_y': 0.97}
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = 'home'
+
+    
+    Image:
+        source: "assets\img\cabe.png"
+        size_hint: 0.28, 0.28
+        pos_hint: {'center_x': 0.5,'center_y': 0.85}
+
+    MDLabel:
+        text: "Cabai Rawit"
+        halign: "center"
+        pos_hint: {'center_y': 0.75}
+        font_style: "Subtitle1"
+        color:
+
+    BoxLayout:
+        id: graf
+        size_hint: None, None
+        width: root.width/1
+        height: root.height/2.3
+        
+        pos_hint: {'center_x': 0.53,'center_y': 0.51}
+
+    GridLayout:
+        cols: 2
+        rows: 1
+        size_hint_y: None
+        height: root.height / 5
+        pos_hint: {'center_y': 0.215}
+        padding: "30dp"
+        spacing: '10dp'
+        ShadowCard:
+            elevation: 2
+            radius: 4
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: -15
+                MDLabel:
+                    halign: "center"
+                    bold: True
+                    text: "Harga"
+                    font_size: "12sp"
+                    color: ("#999999")
+
+                MDLabel:
+                    halign: "center"
+                    text: "Rp.1000"
+                    font_size: "15sp"
+                    bold: True
+
+        ShadowCard:
+            elevation: 2
+            radius: 4
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: -15
+                MDLabel:
+                    halign: "center"
+                    bold: True
+                    text: "Stop Lost"
+                    font_size: "12sp"
+                    color: ("#999999")
+
+                MDLabel:
+                    halign: "center"
+                    bold: True
+                    text: "Rp.1000"
+                    font_size: "15sp"
+
+    GridLayout:
+        cols: 1
+        rows: 1
+        size_hint_y: None
+        height: root.height / 5
+        padding: "50dp", "30dp"
+        spacing: '10dp'
+
+        ShadowCard:
+            elevation: 2
+            radius: 4
+            md_bg_color: ("#00cf94")
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: -15
+                MDLabel:
+                    halign: "center"
+                    bold: True
+                    text: "Prediksi Harga"
+                    font_size: "12sp"
+                    color: 1,1,1,1
+
+                MDLabel:
+                    halign: "center"
+                    bold: True
+                    text: "Rp.1000"
+                    font_size: "17sp"
+                    color: 1,1,1,1
+            
+
+        
+            

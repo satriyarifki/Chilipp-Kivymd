@@ -30,3 +30,22 @@
         icon_right: "eye-off"
         helper_text: "Password"
         password: True
+    MDFillRoundFlatButton:
+        text: "Login"
+        size_hint_x: 0.7
+        pos_hint: {'center_x': 0.5,'center_y': 0.4}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = 'home'
+    MDFloatLayout:
+        MDFillRoundFlatIconButton:
+            pos_hint: {'center_x': 0.32,'center_y': 0.25}
+            size_hint_x: 0.32
+            text: "Google"
+            icon: "google"
+        MDFillRoundFlatIconButton:
+            pos_hint: {'center_x': 0.67,'center_y': 0.25}
+            size_hint_x: 0.32
+            text: "Facebook"
+            icon: "facebook"
+            
