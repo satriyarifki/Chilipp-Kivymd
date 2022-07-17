@@ -35,11 +35,11 @@ class Chilipp(MDApp):
         screens = [
             # Splash(name='splash'),
             # Login(name='login'),
-            Signup(name='signup'),
+            # Signup(name='signup'),
             # Botnav(name='botnav'),
             # Home(name='home'),
             # Cabaidet(name='cabaidet'),
-            # Calcu(name='calcu'),
+            Calcu(name='calcu'),
             # Setting(name='setting'),
             
             
