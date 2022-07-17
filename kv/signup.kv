@@ -7,26 +7,26 @@
         md_bg_color: ("##7ea6fc")
         size_hint_y: 0.3
         radius: [0,0,0,50]
-        pos_hint: {'center_x': 0.55, 'center_y': 0.9}
+        pos_hint: {'center_x': 0.55, 'center_y': 0.94}
     MDBoxLayout:
         orientation: 'vertical'
         md_bg_color: ("#3271F9")
         size_hint_y: 0.3
         radius: [0,0,0,50]
-        pos_hint: {'center_x': 0.5, 'center_y': 0.92}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.96}
     Image:
         source: "assets\img\white chilipp.png"
         size_hint: None, None
         width: dp(120)
-        pos_hint: {'center_x': 0.5,'center_y': 0.89}
+        pos_hint: {'center_x': 0.5,'center_y': 0.9}
     
     MDBoxLayout:
         orientation: 'vertical'
         size_hint_y: None
-        height: root.height / 1.3
+        height: root.height / 1.21
         width: root.width / 2
         padding: "20dp"
-        spacing: '20dp'
+        spacing: '15dp'
         Widget:
             size_hint_y: None
             height: dp(0)
@@ -74,6 +74,45 @@
             icon_right: "eye-off"
             helper_text: "Password"
             password: True
+
+        
+        MDGridLayout:
+            cols: 5
+            padding: '0dp'
+            size_hint_x: None
+            adaptive_height: True
+            width: root.width/ 1.5
+            pos_hint: {'center_x': 0.5}
+            MDLabel:
+                text: "Petani"
+                color:
+                size_hint_x: None
+                font_style: "Body2"
+                width: dp(45)
+                pos_hint: None, None
+                
+            MDCheckbox:
+                size_hint: None, None
+                size: "30dp", "30dp"
+                pos_hint: None, None
+                group: 'check'
+                
+            Widget:
+                size_hint_x: None
+                width: dp(70)
+
+            MDLabel:
+                text: "Pengepul"
+                font_style: "Body2"
+                size_hint_x: None
+                width: dp(60)
+                color:
+            MDCheckbox:
+                size_hint: None, None
+                size: "30dp", "30dp"
+                group: 'check'
+                
+
         MDFillRoundFlatButton:
             text: "Daftar"
             size_hint_x: 0.8
