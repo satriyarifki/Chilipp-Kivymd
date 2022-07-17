@@ -20,11 +20,8 @@ y = [2000, 2312, 5490, 4350, 3212]
 
 
 fig, ax = plt.subplots()
+ax.bar (x,y, width=1, edgecolor="white")
 
-ax.stem(x,y)
-ax.set(xlim=(0,5),
-       ylim=(0,8000))
-plt.plot(x,y, '.-')
 plt.ylabel("Harga")
 plt.xlabel("Bulan")
 

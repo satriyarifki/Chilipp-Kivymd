@@ -1,42 +1,72 @@
 <Login>:
     MDFloatLayout:
         md_bg_color: 1,1,1,1
-
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: ("##7ea6fc")
+        size_hint_y: 0.3
+        radius: [0,0,0,50]
+        pos_hint: {'center_x': 0.55, 'center_y': 0.9}
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: ("#3271F9")
+        size_hint_y: 0.3
+        radius: [0,0,0,50]
+        pos_hint: {'center_x': 0.5, 'center_y': 0.92}
+    Image:
+        source: "assets\img\white chilipp.png"
+        size_hint: None, None
+        width: dp(120)
+        pos_hint: {'center_x': 0.5,'center_y': 0.89}
     MDIconButton:
-        icon: "arrow-left"
+        icon: "arrow-left-circle-outline"
+        theme_icon_color: "Custom"
+        icon_color: 1,1,1,1
         pos_hint: {'center_x': 0.1,'center_y': 0.9}
         on_release:
             root.manager.transition.direction = "right"
             root.manager.current = "splash"
     MDLabel:
         text: "Masuk"
-        color:
+        font_style: "H5"
+        bold: True
         halign: "center"
-        font_size: "20sp"
-        font_style: "Body1"
         pos_hint: {'center_x': 0.22,'center_y': 0.7}
     MDTextField:
         hint_text: "Email Anda"
         max_text_length: 30
         helper_text: "Email"
         mode: "round"
+        fill_color_normal: ("ffffff")
         pos_hint: {'center_x': 0.5,'center_y': 0.6}
         size_hint: 0.6, 0.06
     MDTextField:
         mode: "round"
         size_hint_x: 0.6
         hint_text: "password"
+        fill_color_normal: ("ffffff")
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
         icon_right: "eye-off"
         helper_text: "Password"
         password: True
     MDFillRoundFlatButton:
-        text: "Login"
+        text: "Masuk"
         size_hint_x: 0.7
         pos_hint: {'center_x': 0.5,'center_y': 0.4}
         on_release:
             root.manager.transition.direction = "left"
-            root.manager.current = 'home'
+            root.manager.current = 'botnav'
+
+    MDBoxLayout:
+        pos_hint: {'center_x': 0.5,'center_y': 0.8}
+        MDSeparator:
+        MDLabel:
+            text: "or log in with"
+            adaptive_size: True
+            font_style: "Caption"
+        MDSeparator:
+
     MDFloatLayout:
         MDFillRoundFlatIconButton:
             pos_hint: {'center_x': 0.32,'center_y': 0.25}
@@ -48,4 +78,23 @@
             size_hint_x: 0.32
             text: "Facebook"
             icon: "facebook"
+            md_bg_color: ("#788fbf")
+    
+    
+
+    MDLabel:
+        text: "Tidak punya akun?"
+        halign: "center"
+        font_style: "Caption"
+        pos_hint: {'center_x': 0.43,'center_y': 0.18}
+    MDTextButton:
+        text: "Daftar"
+        bold: True
+        font_style: "Caption"
+        theme_text_color: "Custom"
+        text_color: ("#3271F9")
+        pos_hint: {'center_x': 0.64,'center_y': 0.18}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = "signup"
             

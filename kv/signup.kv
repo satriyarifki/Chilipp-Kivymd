@@ -1,0 +1,132 @@
+<Signup>:
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: ("##7ea6fc")
+        size_hint_y: 0.3
+        radius: [0,0,0,50]
+        pos_hint: {'center_x': 0.55, 'center_y': 0.9}
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: ("#3271F9")
+        size_hint_y: 0.3
+        radius: [0,0,0,50]
+        pos_hint: {'center_x': 0.5, 'center_y': 0.92}
+    Image:
+        source: "assets\img\white chilipp.png"
+        size_hint: None, None
+        width: dp(120)
+        pos_hint: {'center_x': 0.5,'center_y': 0.89}
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: root.height / 1.3
+        width: root.width / 2
+        padding: "20dp"
+        spacing: '20dp'
+        Widget:
+            size_hint_y: None
+            height: dp(0)
+        MDLabel:
+            text: "Daftar"
+            font_style: "H5"
+            bold: True
+            pos_hint: {'center_x': 0.6}
+            
+            
+        MDTextField:
+            hint_text: "Nama Anda"
+            max_text_length: 30
+            size_hint_x: 0.7
+            helper_text: "Nama"
+            mode: "round"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            
+            
+        MDTextField:
+            hint_text: "Email Anda"
+            max_text_length: 30
+            size_hint_x: 0.7
+            helper_text: "Email"
+            mode: "round"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            
+        MDTextField:
+            mode: "round"
+            size_hint_x: 0.7
+            hint_text: "Password"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            icon_right: "eye-off"
+            helper_text: "Password"
+            password: True
+        MDTextField:
+            mode: "round"
+            size_hint_x: 0.7
+            hint_text: "Konfirmasi Password"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            icon_right: "eye-off"
+            helper_text: "Password"
+            password: True
+        MDFillRoundFlatButton:
+            text: "Daftar"
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = 'botnav'
+
+        MDBoxLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            MDSeparator:
+            MDLabel:
+                text: "or log in with"
+                adaptive_size: True
+                font_style: "Caption"
+            MDSeparator:
+
+        MDFloatLayout:
+            MDFillRoundFlatIconButton:
+                pos_hint: {'center_x': 0.32,'center_y': 0.25}
+                size_hint_x: 0.32
+                text: "Google"
+                icon: "google"
+            MDFillRoundFlatIconButton:
+                pos_hint: {'center_x': 0.67,'center_y': 0.25}
+                size_hint_x: 0.32
+                text: "Facebook"
+                icon: "facebook"
+                md_bg_color: ("#788fbf")
+        
+        MDBoxLayout:
+            orientation: 'horizontal'
+            pos_hint: {'center_x': 0.5}
+            spacing: '10dp'
+            MDLabel:
+                text: "Punya akun?"
+                halign: "right"
+                font_style: "Caption"
+                size_hint_x: None
+                width: root.width / 2.1
+                pos_hint: {'right': 1}
+                
+                
+            MDTextButton:
+                text: "Masuk"
+                bold: True
+                font_style: "Caption"
+                theme_text_color: "Custom"
+                text_color: ("#3271F9")
+                size_hint_x: None
+                width: root.width / 2
+                pos_hint: {'center_y': 0.5, 'left': 1}
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current = 'login'
+                

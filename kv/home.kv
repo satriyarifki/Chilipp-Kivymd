@@ -36,14 +36,15 @@
         height: root.height / 1.4
         padding: "30dp"
         spacing: '20dp'
+        y: 50
 
         ShadowCard:
             elevation: 5
             radius: 20
             size_hint: 1, 1
             on_release:
-                root.manager.transition.direction = "left" 
-                root.manager.current = 'cabaidet'
+                root.parent.parent.parent.parent.manager.transition.direction = "left" 
+                root.parent.parent.parent.parent.manager.current = 'cabaidet'
             GridLayout:
                 cols: 1
                 rows: 2

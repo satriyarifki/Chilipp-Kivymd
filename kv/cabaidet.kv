@@ -8,7 +8,7 @@
         pos_hint: {'center_x': 0.1,'center_y': 0.97}
         on_release:
             root.manager.transition.direction = "right"
-            root.manager.current = 'home'
+            root.manager.current = 'botnav'
 
     
     Image:
@@ -84,7 +84,7 @@
         rows: 1
         size_hint_y: None
         height: root.height / 5
-        padding: "50dp", "30dp"
+        padding: "30dp", "30dp"
         spacing: '10dp'
 
         ShadowCard:
@@ -105,7 +105,7 @@
                 MDLabel:
                     halign: "center"
                     bold: True
-                    text: "Rp.1000"
+                    text: "Naik"
                     font_size: "17sp"
                     color: 1,1,1,1
             

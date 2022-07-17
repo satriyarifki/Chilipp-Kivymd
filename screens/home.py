@@ -7,7 +7,7 @@ from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.behaviors import BackgroundColorBehavior
 
 
-class ShadowCard(MDCard, RectangularRippleBehavior, ButtonBehavior ):
+class ShadowCard(MDCard, RoundedRectangularElevationBehavior):
     pass
 
 

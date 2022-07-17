@@ -1,5 +1,103 @@
-<Calcu>
+<Calcu>:
+    md_bg_color: 1,1,1,1
     MDBoxLayout:
+        id: box_out
+        padding: "20dp"
+        spacing: '20dp'
+        orientation: 'vertical'
+        size_hint_y: None
+        
+        height: root.height / 1.25
+        width: root.width
+        pos_hint: {'top': 0.93}
+        
         MDLabel:
-            text: "hai"
-            color:
+            text: "Kalkulator (Perkiraan)"
+            font_style: "H6"
+            bold: True
+            pos_hint: {'center_x': 0.5}
+        
+        Widget:
+            size_hint_y: None
+            height: dp(25)
+            
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '15dp'
+            
+            MDLabel:
+                text: "Berat (kilogram)"
+                font_style: "Caption"
+                pos_hint: {'center_x': 0.5}
+                
+            MDTextField:
+                mode: "round"
+                
+                hint_text: "Masukkan berat"
+                size_hint_x: None
+                width: root.width - dp(75)
+                pos_hint: {'center_x': 0.49,'center_y': 0.0}
+                fill_color_normal: 1,1,1,1  
+                font_style: "Caption" 
+                size_hint_text: "5dp"    
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '15dp'
+            MDLabel:
+                text: "Berat (kilogram)"
+                font_style: "Caption"
+                pos_hint: {'center_x': 0.5}
+            MDDropDownItem:
+                text: 'ssd'
+                
+                on_release: self.set_item("New Item")
+
+
+        MDFillRoundFlatButton:
+            text: 'Hitung'
+            width: root.width - dp(50)
+
+        MDBoxLayout:
+            MDSeparator:
+            MDLabel:
+                text: "Hasil Perkiraan"
+                adaptive_size: True
+                font_style: "Caption"
+            MDSeparator:
+        
+        Widget:
+            size_hint_y: None
+            height: "20dp"
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '25dp'
+            MDLabel:
+                text: "Estimasi :"
+            MDLabel:
+                text: "Berat       :"
+            MDLabel:
+                text: "Tujuan    :"
+        
+        Widget:
+            size_hint_y: None
+            height: "-5dp"
+
+        MDTextField:
+            hint_text: "1212"
+            size_hint_x: None
+            width: root.width - dp(75)
+            mode: "round"
+            fill_color_normal: ("#ffffff") 
+            hint_text_color_normal: ("#3271F9")
+            pos_hint: {'center_x': 0.5,}
+            size_hint_y: None
+            disabled: True
+            line_color_normal: ("#ffffff") 
+
+            
+                     

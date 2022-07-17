@@ -1,8 +1,6 @@
 from kivymd.tools.hotreload.app import MDApp
 from kivy.uix.screenmanager import ScreenManager
 from kivy.core.text import LabelBase
-from screens.cabaidet import Cabaidet
-
 from screens.screens import *
 
 class WindowManager(ScreenManager):
@@ -12,10 +10,12 @@ class Chilipp(MDApp):
     CLASSES = {
         'Splash' : 'screens.splash',
         'Login' : 'screens.login',
+        'Signup' : 'screens.signup',
         'Botnav' : 'screens.botnav',
         'Home'  : 'screens.home',
         'Calcu' : 'screens.calcu',
         'Cabaidet' : 'screens.cabaidet',
+        'Setting' : 'screens.setting',
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -26,17 +26,22 @@ class Chilipp(MDApp):
         'kv/botnav.kv',
         'kv/home.kv',
         'kv/calcu.kv',
-        'kv/cabaidet.kv'
+        'kv/cabaidet.kv',
+        'kv/setting.kv',
+        'kv/signup.kv',
     ]
     def build_app(self): 
         self.wm = WindowManager()
         screens = [
-            # Splash(name='splash'),
-            # Login(name='login'),
-            # Botnav(name='botnav'),
+            Splash(name='splash'),
+            Login(name='login'),
+            Signup(name='signup'),
+            Botnav(name='botnav'),
             Home(name='home'),
             Cabaidet(name='cabaidet'),
             Calcu(name='calcu'),
+            Setting(name='setting'),
+            
             
         ]
         for screen in screens:
