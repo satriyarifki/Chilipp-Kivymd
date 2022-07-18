@@ -34,6 +34,7 @@
         halign: "center"
         pos_hint: {'center_x': 0.22,'center_y': 0.7}
     MDTextField:
+        id: email
         hint_text: "Email Anda"
         max_text_length: 30
         helper_text: "Email"
@@ -42,6 +43,7 @@
         pos_hint: {'center_x': 0.5,'center_y': 0.6}
         size_hint: 0.6, 0.06
     MDTextField:
+        id: password
         mode: "round"
         size_hint_x: 0.6
         hint_text: "password"
@@ -54,9 +56,10 @@
         text: "Masuk"
         size_hint_x: 0.7
         pos_hint: {'center_x': 0.5,'center_y': 0.4}
-        on_release:
-            root.manager.transition.direction = "left"
-            root.manager.current = 'botnav'
+        on_press:
+            # root.manager.transition.direction = "left"
+            # root.manager.current = 'botnav'
+            root.auth()
 
     MDBoxLayout:
         pos_hint: {'center_x': 0.5,'center_y': 0.8}
@@ -79,6 +82,8 @@
             text: "Facebook"
             icon: "facebook"
             md_bg_color: ("#788fbf")
+            on_release:
+                root.get_session()
     
     
 

@@ -1,7 +1,9 @@
 from kivymd.tools.hotreload.app import MDApp
 from kivy.uix.screenmanager import ScreenManager
 from kivy.core.text import LabelBase
+import requests
 from screens.screens import *
+from system.base_url import base_url
 
 class WindowManager(ScreenManager):
     pass
@@ -34,13 +36,13 @@ class Chilipp(MDApp):
         self.wm = WindowManager()
         screens = [
             # Splash(name='splash'),
-            # Login(name='login'),
+            Login(name='login'),
             # Signup(name='signup'),
-            # Botnav(name='botnav'),
-            # Home(name='home'),
-            # Cabaidet(name='cabaidet'),
+            Botnav(name='botnav'),
+            Home(name='home'),
+            Cabaidet(name='cabaidet'),
             Calcu(name='calcu'),
-            # Setting(name='setting'),
+            Setting(name='setting'),
             
             
         ]
@@ -48,9 +50,10 @@ class Chilipp(MDApp):
             self.wm.add_widget(screen)
         return self.wm
     
-    def _rebuild(self, *args):
-        if args[1] == 32:
-            self.rebuild()
+    
+    def get_nama(self):
+        apadah = requests.Session()
+        return apadah.get()
             
 if __name__ == '__main__':
     Chilipp().run()
