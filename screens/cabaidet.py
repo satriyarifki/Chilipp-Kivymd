@@ -78,27 +78,19 @@ class Cabaidet(MDScreen):
         graf = self.ids.graf
         graf.add_widget(FigureCanvasKivyAgg(plt.gcf()))
 
-    def ubah_berita(self):
-        dataJson = {
-            'berita': self.get_data()
-        }
+    def get_data(self):
+        sampel = self.sampel_data()
+        x_berita = self.get_berita()
+        print(sampel['id'], x_berita)
+        # self.ubah_berita(sampel['id'], x_berita)
 
-        id = 273
-
-        store = requests.put(base_url() + '/user/' + id, json=dataJson)
-
-        if store.status_code == 200:
-            # popup = Popup(title='Popup', content=Label(text='Berhasil'),
-            #   auto_dismiss=True)
-            # popup.open()
-            toast('Berhasil')
-        else:
-            toast('gagal, status code : 400')
+        return x_berita
 
     def sampel_data(self):
         store = requests.get(base_url() + '/dataset/sampel_data').json()
 
         list_data = {
+            'id': store['id'],
             'tanggal': store['tanggal'],
             'permintaan': store['permintaan'],
             'ketersediaan': store['ketersediaan'],
@@ -106,15 +98,13 @@ class Cabaidet(MDScreen):
             'berita': store['berita']
         }
 
-        print(list_data)
+        return list_data
 
     def get_harga(self):
         predict_price = predict_prices(ids, prices, [len(data)])
         return str(round(predict_price, 3))
 
-    def get_data(self):
-        print(self.sampel_data())
-        # print(self.get_harga())
+    def get_berita(self):
         # prob kelas
         prob = self.probabilitas_kelas()
 
@@ -134,9 +124,10 @@ class Cabaidet(MDScreen):
         harga_turun = self.sort_harga('turun')
 
         # sample data
-        x_permintaan = 8920
-        x_ketersediaan = 3769
-        x_harga = 19000
+        sampel = self.sampel_data()
+        x_permintaan = sampel['permintaan']
+        x_ketersediaan = sampel['ketersediaan']
+        x_harga = sampel['harga']
         x_berita = ''
 
         # prob permintaan [x = naik, y = tetap, z = turun]
@@ -211,6 +202,14 @@ class Cabaidet(MDScreen):
         #       ' atau ', (x_permintaan/1000), ' ton')
         # print('Ketersediaan (KG) : ', x_ketersediaan,
         #       ' atau ', (x_ketersediaan/1000), ' ton')
+        dataJson = {
+            'berita': x_berita
+        }
+
+        store = requests.post(
+            base_url() + '/dataset/' + str(sampel['id']) + '/berita', json=dataJson)
+
+        print(store.status_code)
 
         return x_berita
 
