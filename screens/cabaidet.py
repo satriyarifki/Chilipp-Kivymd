@@ -79,9 +79,9 @@ class Cabaidet(MDScreen):
         graf.add_widget(FigureCanvasKivyAgg(plt.gcf()))
 
     def get_data(self):
-        sampel = self.sampel_data()
+        # sampel = self.sampel_data()
         x_berita = self.get_berita()
-        print(sampel['id'], x_berita)
+        # print(sampel['id'], x_berita)
         # self.ubah_berita(sampel['id'], x_berita)
 
         return x_berita
@@ -209,7 +209,7 @@ class Cabaidet(MDScreen):
         store = requests.post(
             base_url() + '/dataset/' + str(sampel['id']) + '/berita', json=dataJson)
 
-        print(store.status_code)
+        # print(store.status_code)
 
         return x_berita
 
@@ -271,3 +271,6 @@ class Cabaidet(MDScreen):
         }
 
         return list_data
+
+    def stop_loss(self):
+        print('OK')

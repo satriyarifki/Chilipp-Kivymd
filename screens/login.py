@@ -6,6 +6,7 @@ import json
 from matplotlib.pyplot import cla
 import requests
 from system.base_url import base_url
+from kivymd.toast import toast
 
 # base_url = 'http://localhost:8000/api'
 
@@ -17,20 +18,30 @@ class Login(MDScreen):
 
     def auth(self):
         global jsonData
-        dataJson = {
-            'email': self.ids.email.text,
-            'password': self.ids.password.text
-        }
-        store = requests.post(base_url() + '/login', json=dataJson)
+        _email = self.ids.email.text
+        _password = self.ids.password.text
 
-        jsonData = store.text
-        if store.status_code == 200:
-            # print(store['email'])
-            print(store.text, '\n')
-
-            self.manager.current = 'botnav'
+        if _email == '' and _password == '':
+            toast('Email dan Password tidak boleh kosong')
         else:
-            print('gagal login')
+            # toast('OK')
+
+            dataJson = {
+                'email': _email,
+                'password': _password
+            }
+            store = requests.post(base_url() + '/login', json=dataJson)
+            # data = store.json()
+            # jsonData = store.text
+            data = json.loads(store.text)
+
+            if store.status_code == 200:
+                # print(store.text, '\n')
+                print(data['email'])
+                # self.manager.current = 'botnav'
+                toast('Berhasil Login')
+            else:
+                toast('Gagal Login')
 
     def get_session(self):
         data = jsonData.split()

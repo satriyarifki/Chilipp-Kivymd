@@ -38,11 +38,11 @@ class Chilipp(MDApp):
         self.wm = WindowManager()
         screens = [
             # Splash(name='splash'),
-            # Login(name='login'),
+            Login(name='login'),
             # Signup(name='signup'),
             # Botnav(name='botnav'),
             # Home(name='home'),
-            Cabaidet(name='cabaidet'),
+            # Cabaidet(name='cabaidet'),
             # Calcu(name='calcu'),
             # Setting(name='setting'),
         ]
