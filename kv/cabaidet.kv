@@ -49,13 +49,13 @@
                 MDLabel:
                     halign: "center"
                     bold: True
-                    text: "Harga"
+                    text: "Prediksi Harga"
                     font_size: "12sp"
                     color: ("#999999")
 
                 MDLabel:
                     halign: "center"
-                    text: "Rp.1000"
+                    text: "Rp. " + root.get_harga()
                     font_size: "15sp"
                     bold: True
 
@@ -98,14 +98,14 @@
                 MDLabel:
                     halign: "center"
                     bold: True
-                    text: "Prediksi Harga"
+                    text: "Prediksi Berita"
                     font_size: "12sp"
                     color: 1,1,1,1
 
                 MDLabel:
                     halign: "center"
                     bold: True
-                    text: "Naik"
+                    text: root.get_data()
                     font_size: "17sp"
                     color: 1,1,1,1
             

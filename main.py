@@ -3,21 +3,22 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.core.text import LabelBase
 import requests
 from screens.screens import *
-from system.base_url import base_url
+
 
 class WindowManager(ScreenManager):
     pass
 
+
 class Chilipp(MDApp):
     CLASSES = {
-        'Splash' : 'screens.splash',
-        'Login' : 'screens.login',
-        'Signup' : 'screens.signup',
-        'Botnav' : 'screens.botnav',
-        'Home'  : 'screens.home',
-        'Calcu' : 'screens.calcu',
-        'Cabaidet' : 'screens.cabaidet',
-        'Setting' : 'screens.setting',
+        'Splash': 'screens.splash',
+        'Login': 'screens.login',
+        'Signup': 'screens.signup',
+        'Botnav': 'screens.botnav',
+        'Home': 'screens.home',
+        'Calcu': 'screens.calcu',
+        'Cabaidet': 'screens.cabaidet',
+        'Setting': 'screens.setting',
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -32,28 +33,23 @@ class Chilipp(MDApp):
         'kv/setting.kv',
         'kv/signup.kv',
     ]
-    def build_app(self): 
+
+    def build_app(self):
         self.wm = WindowManager()
         screens = [
             # Splash(name='splash'),
-            Login(name='login'),
+            # Login(name='login'),
             # Signup(name='signup'),
-            Botnav(name='botnav'),
-            Home(name='home'),
+            # Botnav(name='botnav'),
+            # Home(name='home'),
             Cabaidet(name='cabaidet'),
-            Calcu(name='calcu'),
-            Setting(name='setting'),
-            
-            
+            # Calcu(name='calcu'),
+            # Setting(name='setting'),
         ]
         for screen in screens:
             self.wm.add_widget(screen)
         return self.wm
-    
-    
-    def get_nama(self):
-        apadah = requests.Session()
-        return apadah.get()
-            
+
+
 if __name__ == '__main__':
     Chilipp().run()
