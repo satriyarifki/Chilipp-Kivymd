@@ -39,14 +39,14 @@ class Chilipp(MDApp):
     def build_app(self):
         self.wm = WindowManager()
         screens = [
-            # Splash(name='splash'),
-            # Login(name='login'),
-            # Signup(name='signup'),
+            Splash(name='splash'),
+            Login(name='login'),
+            Signup(name='signup'),
             Botnav(name='botnav'),
-            # Home(name='home'),
-            # Cabaidet(name='cabaidet'),
+            Home(name='home'),
+            Cabaidet(name='cabaidet'),
             Calcu(name='calcu'),
-            # Setting(name='setting'),
+            Setting(name='setting'),
         ]
         for screen in screens:
             self.wm.add_widget(screen)
