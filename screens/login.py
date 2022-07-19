@@ -1,4 +1,5 @@
-from ast import If
+from audioop import add
+from email.mime import base
 from audioop import add
 from email.mime import base
 from kivymd.uix.screen import MDScreen
@@ -24,15 +25,14 @@ class Login(MDScreen):
         }
         sess = requests.Session()
         store = sess.post(base_url() + '/login', json=dataJson)
-        
+        jsonData = store
         if store.status_code == 200:
             # print(store['email'])
             print(store.text,'\n')
-            self.get_session(store.text)
             self.manager.current = 'botnav'
         else :
             print('gagal login')
     
-    def get_session(self, jsonData):
+    def get_session(self):
         data = jsonData
         print(data)        

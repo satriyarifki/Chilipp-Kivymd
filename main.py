@@ -18,6 +18,7 @@ class Chilipp(MDApp):
         'Calcu' : 'screens.calcu',
         'Cabaidet' : 'screens.cabaidet',
         'Setting' : 'screens.setting',
+        'Stoploss' : 'screens.stoploss',
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -31,6 +32,7 @@ class Chilipp(MDApp):
         'kv/cabaidet.kv',
         'kv/setting.kv',
         'kv/signup.kv',
+        'kv/stoploss.kv',
     ]
     def build_app(self): 
         self.wm = WindowManager()
@@ -43,6 +45,7 @@ class Chilipp(MDApp):
             Cabaidet(name='cabaidet'),
             Calcu(name='calcu'),
             Setting(name='setting'),
+            Stoploss(name='stoploss'),
             
             
         ]
@@ -53,7 +56,7 @@ class Chilipp(MDApp):
     
     def get_nama(self):
         apadah = requests.Session()
-        return apadah.get()
+        return apadah
             
 if __name__ == '__main__':
     Chilipp().run()
