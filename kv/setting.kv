@@ -10,5 +10,6 @@
             text_color: 1,1,1,1
             pos_hint: {'right': 1}
             on_release:
+                root.logout()
                 root.parent.parent.parent.parent.manager.transition.direction = "right" 
                 root.parent.parent.parent.parent.manager.current = 'login'

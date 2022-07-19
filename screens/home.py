@@ -1,3 +1,5 @@
+import json
+import time
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
 from kivymd.uix.behaviors import RoundedRectangularElevationBehavior
@@ -12,9 +14,13 @@ class ShadowCard(MDCard, RoundedRectangularElevationBehavior):
 
 
 class Home(MDScreen):
+
     def __init__(self, **kw):
         Builder.load_file("kv/home.kv")
         super().__init__(**kw)
 
     def get_nama(self):
-        print('OK')
+        f = open('store/user.json')
+        data = json.load(f)
+        # print(data['nama'])
+        return data['nama']

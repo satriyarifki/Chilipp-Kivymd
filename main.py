@@ -3,6 +3,8 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.core.text import LabelBase
 import requests
 from screens.screens import *
+from screens.login import Login
+from kivy.storage.dictstore import DictStore
 
 
 class WindowManager(ScreenManager):
@@ -38,12 +40,12 @@ class Chilipp(MDApp):
         self.wm = WindowManager()
         screens = [
             # Splash(name='splash'),
-            Login(name='login'),
+            # Login(name='login'),
             # Signup(name='signup'),
-            # Botnav(name='botnav'),
+            Botnav(name='botnav'),
             # Home(name='home'),
             # Cabaidet(name='cabaidet'),
-            # Calcu(name='calcu'),
+            Calcu(name='calcu'),
             # Setting(name='setting'),
         ]
         for screen in screens:

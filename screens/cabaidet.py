@@ -11,6 +11,7 @@ from system.base_url import base_url
 from kivymd.toast import toast
 import pandas as pd
 import requests
+import json
 from sklearn.svm import SVR
 
 
@@ -273,4 +274,10 @@ class Cabaidet(MDScreen):
         return list_data
 
     def stop_loss(self):
-        print('OK')
+        predict_price = predict_prices(ids, prices, [len(data)])
+        f = open('store/user.json')
+        r = json.load(f)
+        stop = (r['stop_loss'] / 100) * r['harga_awal']
+        price = predict_price - stop
+        # print(data['nama'])
+        return str(round(price, 3))
