@@ -13,6 +13,7 @@ class WindowManager(ScreenManager):
 
 class Chilipp(MDApp):
     CLASSES = {
+
         'Splash': 'screens.splash',
         'Login': 'screens.login',
         'Signup': 'screens.signup',
@@ -21,6 +22,8 @@ class Chilipp(MDApp):
         'Calcu': 'screens.calcu',
         'Cabaidet': 'screens.cabaidet',
         'Setting': 'screens.setting',
+        'Stoploss': 'screens.stoploss',
+
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -34,6 +37,7 @@ class Chilipp(MDApp):
         'kv/cabaidet.kv',
         'kv/setting.kv',
         'kv/signup.kv',
+        'kv/stoploss.kv',
     ]
 
     def build_app(self):
@@ -47,6 +51,8 @@ class Chilipp(MDApp):
             Cabaidet(name='cabaidet'),
             Calcu(name='calcu'),
             Setting(name='setting'),
+            Setting(name='setting'),
+            Stoploss(name='stoploss'),
         ]
         for screen in screens:
             self.wm.add_widget(screen)

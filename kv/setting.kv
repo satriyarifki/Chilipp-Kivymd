@@ -2,14 +2,89 @@
     md_bg_color: 1,1,1,1
     MDBoxLayout:
         orientation: 'vertical'
+        md_bg_color: ("#3271F9")
+        size_hint_y: 0.3
+        radius: [0,0,50,0]
+        pos_hint: {'center_x': 0.5, 'center_y': 0.95}
+        padding: '30dp'
+        Widget:
+            size_hint_y: None
+            height: dp(55)
+        MDLabel:
+            text: "Pengaturan"
+            font_style: 'H4'
+            bold: True
+            color: 1,1,1,1
+    MDBoxLayout:
+        orientation: 'vertical'
         padding: '30dp', '20dp'
-        MDFlatButton:
-            text: 'Log out'
-            md_bg_color: ("#ff1420")
-            theme_text_color: "Custom"
-            text_color: 1,1,1,1
-            pos_hint: {'right': 1}
-            on_release:
-                root.logout()
-                root.parent.parent.parent.parent.manager.transition.direction = "right" 
-                root.parent.parent.parent.parent.manager.current = 'login'
+        size_hint_y: None
+        height: root.height / 1.5
+        
+        y: 50
+        MDList:
+            spacing: '10dp'
+            padding: '0dp', '100dp', '0dp', '0dp'
+            OneLineIconListItem:
+                text: 'Pemberitahuan'
+                font_style: 'Subtitle1'
+                halign: 'left'
+                IconLeftWidget:
+                    icon: "bell-outline"
+            OneLineIconListItem:
+                text: 'Profile'
+                font_style: 'Subtitle1'
+                halign: 'left'
+                IconLeftWidget:
+                    icon: "account-circle-outline"
+                
+            OneLineIconListItem:
+                text: 'Ubah Password'
+                font_style: 'Subtitle1'
+                halign: 'left'
+                IconLeftWidget:
+                    icon: "key-change"
+            OneLineIconListItem:
+                text: 'Stop Loss'
+                font_style: 'Subtitle1'
+                halign: 'left'
+                on_release:
+                    root.parent.parent.parent.parent.manager.transition.direction = "left" 
+                    root.parent.parent.parent.parent.manager.current = 'stoploss'
+                IconLeftWidget:
+                    icon: "close-octagon-outline"
+            OneLineIconListItem:
+                text: 'Bantuan'
+                font_style: 'Subtitle1'
+                halign: 'left'
+                IconLeftWidget:
+                    icon: "help-circle-outline"
+
+            OneLineIconListItem:
+                text: 'Keluar'
+                radius: 10
+                md_bg_color: ("#ff1420")
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1
+                halign: 'center'
+                pos_hint: {'center_x': 0.5}
+                size_hint_x: None
+                width: root.width /1.2
+                on_release:
+                    root.parent.parent.parent.parent.manager.transition.direction = "right" 
+                    root.parent.parent.parent.parent.manager.current = 'login'
+                IconLeftWidget:
+                    icon: "logout-variant"
+                
+            
+        # MDFlatButton:
+        #     text: 'Log out'
+        #     md_bg_color: ("#ff1420")
+        #     theme_text_color: "Custom"
+        #     text_color: 1,1,1,1
+        #     pos_hint: {'right': 1}
+        #     on_release:
+        #         root.parent.parent.parent.parent.manager.transition.direction = "right" 
+        #         root.parent.parent.parent.parent.manager.current = 'login'
+
+

@@ -1,0 +1,54 @@
+<Stoploss>:
+    md_bg_color: 1,1,1,1
+    MDIconButton:
+        icon: 'arrow-left'
+        custom_color: ("#3271F9")
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = 'botnav'
+        pos_hint: {'center_x': 0.1,'center_y': 0.95}
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: '30dp'
+        size_hint_y: None
+        height: root.height /1.5
+        # md_bg_color: 0,1,0,1
+        y: 250
+        MDLabel:
+            text: "Pengaturan Stop Loss"
+            font_style: "H6"
+            size_hint_x: None
+            width: root.width
+            
+        MDList:
+            # md_bg_color: 0,1,0,1
+            spacing: '20dp'
+            size_hint_x: None
+            width: root.width / 1.2
+            
+            Widget:
+                size_hint_y: None
+                height: dp(20)
+            MDBoxLayout: 
+                padding: '20dp'
+                spacing: '20dp'
+                MDTextField:
+                    hint_text: "Batas Stop Loss"
+                    helper_text: "Batas (Rp)"
+                    mode: "round"
+                    fill_color_normal: ("ffffff")
+                    size_hint_x: None
+                    width: root.width / 1.45
+                    pos_hint: {'center_x': 0,'center_y': 0.0}
+                
+            
+            MDFlatButton:
+                text: 'Tetapkan'
+                size_hint_x: None
+                width: root.width / 1.23
+                md_bg_color: ("#3271F9")
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1
+                
+
+        

@@ -7,3 +7,4 @@ from screens.calcu import *
 from screens.cabaidet import *
 from screens.setting import *
 from screens.signup import *
+from screens.stoploss import *
