@@ -32,7 +32,7 @@
                 
             MDTextField:
                 mode: "round"
-                
+                id: berat
                 hint_text: "Masukkan berat"
                 size_hint_x: None
                 width: root.width - dp(75)
@@ -40,6 +40,7 @@
                 fill_color_normal: 1,1,1,1  
                 font_style: "Caption" 
                 size_hint_text: "5dp"    
+                input_type: 'number'
 
         Widget:
             size_hint_y: None
@@ -68,10 +69,13 @@
                     pos_hint: None, None
                     
                 MDCheckbox:
+                    id: tujuan
                     size_hint: None, None
                     size: "30dp", "30dp"
                     pos_hint: None, None
                     group: 'check'
+                    on_active:
+                        root.tujuan(self, self.active, "Jawa Timur")
                     
                 Widget:
                     size_hint_x: None
@@ -84,9 +88,13 @@
                     width: dp(90)
                     color:
                 MDCheckbox:
+                    id: tujuan
                     size_hint: None, None
                     size: "30dp", "30dp"
                     group: 'check'
+                    on_active:
+                        root.tujuan(self, self.active, "Jawa Tengah")
+
                 MDLabel:
                     text: "Jawa Barat"
                     color:
@@ -96,31 +104,40 @@
                     pos_hint: None, None
                     
                 MDCheckbox:
+                    id: tujuan
+                    text: "Jawa Barat"
                     size_hint: None, None
                     size: "30dp", "30dp"
                     pos_hint: None, None
                     group: 'check'
-                    
+                    on_active:
+                        root.tujuan(self, self.active, "Jawa Barat")
+
                 Widget:
                     size_hint_x: None
                     width: dp(40)
 
                 MDLabel:
                     
-                    text: "Banten"
+                    text: "Jakarta"
                     font_style: "Body2"
                     size_hint_x: None
                     width: dp(80)
                     color:
                 MDCheckbox:
+                    id: tujuan
                     size_hint: None, None
                     size: "30dp", "30dp"
                     group: 'check'
+                    on_active:
+                        root.tujuan(self, self.active, "Jakarta")
 
 
         MDFillRoundFlatButton:
             text: 'Hitung'
             width: root.width - dp(50)
+            on_press:
+                root.calc()
 
         MDBoxLayout:
             MDSeparator:
@@ -132,23 +149,28 @@
         
         Widget:
             size_hint_y: None
-            height: "20dp"
+            height: "50dp"
         MDBoxLayout:
             orientation: 'vertical'
             spacing: '25dp'
             MDLabel:
-                text: "Estimasi :"
+                text: ""
+                id: lblestimasi
             MDLabel:
-                text: "Berat       :"
+                text: ""
+                id: lblberat
             MDLabel:
-                text: "Tujuan    :"
+                text: ""
+                id: lbltujuan
+            MDLabel:
+                text: "Total Perkiraan Biaya"
         
         Widget:
             size_hint_y: None
-            height: "-5dp"
-
+            height: "-15dp"
         MDTextField:
-            hint_text: "1212"
+            id: tftotal
+            hint_text: ""
             size_hint_x: None
             width: root.width - dp(75)
             mode: "round"
