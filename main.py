@@ -43,15 +43,15 @@ class Chilipp(MDApp):
     def build_app(self):
         self.wm = WindowManager()
         screens = [
-            Splash(name='splash'),
-            Login(name='login'),
-            Signup(name='signup'),
-            Botnav(name='botnav'),
-            Home(name='home'),
-            Cabaidet(name='cabaidet'),
-            Calcu(name='calcu'),
-            Setting(name='setting'),
-            Setting(name='setting'),
+            # Splash(name='splash'),
+            # Login(name='login'),
+            # Signup(name='signup'),
+            # Botnav(name='botnav'),
+            # Home(name='home'),
+            # Cabaidet(name='cabaidet'),
+            # Calcu(name='calcu'),
+            # Setting(name='setting'),
+            # Setting(name='setting'),
             Stoploss(name='stoploss'),
         ]
         for screen in screens:
