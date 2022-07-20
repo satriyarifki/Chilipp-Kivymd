@@ -38,8 +38,9 @@
             
             
         MDTextField:
+            id: nama
             hint_text: "Nama Anda"
-            max_text_length: 30
+            max_text_length: 50
             size_hint_x: 0.7
             helper_text: "Nama"
             mode: "round"
@@ -48,8 +49,9 @@
             
             
         MDTextField:
+            id: email
             hint_text: "Email Anda"
-            max_text_length: 30
+            max_text_length: 50
             size_hint_x: 0.7
             helper_text: "Email"
             mode: "round"
@@ -57,6 +59,7 @@
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
             
         MDTextField:
+            id: password
             mode: "round"
             size_hint_x: 0.7
             hint_text: "Password"
@@ -66,6 +69,7 @@
             helper_text: "Password"
             password: True
         MDTextField:
+            id: password_confirm
             mode: "round"
             size_hint_x: 0.7
             hint_text: "Konfirmasi Password"
@@ -92,10 +96,13 @@
                 pos_hint: None, None
                 
             MDCheckbox:
+                id: role
                 size_hint: None, None
                 size: "30dp", "30dp"
                 pos_hint: None, None
                 group: 'check'
+                on_active:
+                    root.checkrole(self, self.active, "petani")
                 
             Widget:
                 size_hint_x: None
@@ -108,9 +115,12 @@
                 width: dp(60)
                 color:
             MDCheckbox:
+                id: role
                 size_hint: None, None
                 size: "30dp", "30dp"
                 group: 'check'
+                on_active:
+                    root.checkrole(self, self.active, "pengepul")
                 
 
         MDFillRoundFlatButton:
@@ -118,8 +128,9 @@
             size_hint_x: 0.8
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
             on_release:
-                root.manager.transition.direction = "left"
-                root.manager.current = 'botnav'
+                # root.manager.transition.direction = "left"
+                # root.manager.current = 'botnav'
+                root.register()
 
         MDBoxLayout:
             pos_hint: {'center_x': 0.5,'center_y': 0.8}

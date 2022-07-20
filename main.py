@@ -25,7 +25,6 @@ class Chilipp(MDApp):
         'Stoploss' : 'screens.stoploss',
         'Changepass' : 'screens.changepass',
         'Profile' : 'screens.profile',
-
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -63,11 +62,6 @@ class Chilipp(MDApp):
         self.wm.add_widget(Changepass(name='changepass'))
         self.wm.add_widget(Profile(name='profile'))
         return self.wm
-    
-    
-    def get_nama(self):
-        apadah = requests.Session()
-        return apadah
-            
+
 if __name__ == '__main__':
     Chilipp().run()

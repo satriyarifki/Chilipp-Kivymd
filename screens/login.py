@@ -47,6 +47,8 @@ class Login(MDScreen):
                 self.manager.current = 'botnav'
             else:
                 toast('Gagal Login')
+                toast('Login Gagal! Cek email dan password!')
+
 
     def add_user(self, jsonData):
         jsonString = json.dumps(jsonData)
@@ -74,3 +76,5 @@ class Login(MDScreen):
     def logout(self):
         data = DictStore(self.user)
         return data.delete()   
+
+
