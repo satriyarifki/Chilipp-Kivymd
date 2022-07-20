@@ -1,0 +1,69 @@
+<Changepass>:
+    md_bg_color: 1,1,1,1
+
+    MDIconButton:
+        icon: 'arrow-left'
+        custom_color: ("#3271F9")
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = 'botnav'
+        pos_hint: {'center_x': 0.1,'center_y': 0.95}
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: '30dp'
+        spacing: '20dp'
+        size_hint_y: None
+        height: root.height /1.4
+        # md_bg_color: 0,1,0,1
+        y: 150
+        MDLabel:
+            text: "Ubah Password"
+            font_style: "H6"
+            size_hint_x: None
+            width: root.width
+        MDTextField:
+            mode: "round"
+            size_hint_x: 0.7
+            hint_text: "Password Lama"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            icon_right: "eye-off"
+            helper_text: "Password"
+            password: True
+        
+        MDSeparator:
+        
+        MDTextField:
+            mode: "round"
+            size_hint_x: 0.7
+            hint_text: "Password Baru"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            icon_right: "eye-off"
+            helper_text: "Password"
+            password: False
+
+        MDTextField:
+            mode: "round"
+            size_hint_x: 0.7
+            hint_text: "Konfirmasi Password"
+            fill_color_normal: ("ffffff")
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            icon_right: "eye-off"
+            helper_text: "Password"
+            password: True
+        
+        Widget:
+            size_hint_y: None
+            height: dp(0)
+
+        MDFlatButton:
+            text: 'Tetapkan'
+            size_hint_x: 1
+            md_bg_color: ("#3271F9")
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            on_release:
+            
+            

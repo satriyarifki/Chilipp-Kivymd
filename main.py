@@ -23,6 +23,8 @@ class Chilipp(MDApp):
         'Cabaidet' : 'screens.cabaidet',
         'Setting' : 'screens.setting',
         'Stoploss' : 'screens.stoploss',
+        'Changepass' : 'screens.changepass',
+        'Profile' : 'screens.profile',
 
     }
     AUTORELOADER_PATHS = [
@@ -38,6 +40,8 @@ class Chilipp(MDApp):
         'kv/setting.kv',
         'kv/signup.kv',
         'kv/stoploss.kv',
+        'kv/changepass.kv',
+        'kv/profile.kv',
     ]
 
     def build_app(self):
@@ -46,32 +50,24 @@ class Chilipp(MDApp):
             # Splash(name='splash'),
             # Login(name='login'),
             # Signup(name='signup'),
-            Botnav(name='botnav'),
-            # Home(name='home'),
-            # Cabaidet(name='cabaidet'),
-            Calcu(name='calcu'),
-<<<<<<< HEAD
-            Setting(name='setting'),
-            Stoploss(name='stoploss'),
-            
-            
-=======
-            # Setting(name='setting'),
->>>>>>> 4576bfda3c27395795f1d401d0aa8bb208b562b9
         ]
         for screen in screens:
             self.wm.add_widget(screen)
+        
+        self.wm.add_widget(Botnav(name='botnav'))
+        self.wm.add_widget(Home(name='home'))
+        # self.wm.add_widget(Cabaidet(name='cabaidet'))
+        self.wm.add_widget(Calcu(name='calcu'))
+        self.wm.add_widget(Setting(name='setting'))
+        self.wm.add_widget(Stoploss(name='stoploss'))
+        self.wm.add_widget(Changepass(name='changepass'))
+        self.wm.add_widget(Profile(name='profile'))
         return self.wm
-<<<<<<< HEAD
     
     
     def get_nama(self):
         apadah = requests.Session()
         return apadah
             
-=======
-
-
->>>>>>> 4576bfda3c27395795f1d401d0aa8bb208b562b9
 if __name__ == '__main__':
     Chilipp().run()

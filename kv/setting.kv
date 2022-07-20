@@ -21,20 +21,18 @@
         size_hint_y: None
         height: root.height / 1.5
         
-        y: 50
+        y: 100
         MDList:
             spacing: '10dp'
             padding: '0dp', '100dp', '0dp', '0dp'
-            OneLineIconListItem:
-                text: 'Pemberitahuan'
-                font_style: 'Subtitle1'
-                halign: 'left'
-                IconLeftWidget:
-                    icon: "bell-outline"
+            
             OneLineIconListItem:
                 text: 'Profile'
                 font_style: 'Subtitle1'
                 halign: 'left'
+                on_release:
+                    root.parent.parent.parent.parent.manager.transition.direction = "left" 
+                    root.parent.parent.parent.parent.manager.current = 'profile'
                 IconLeftWidget:
                     icon: "account-circle-outline"
                 
@@ -42,8 +40,13 @@
                 text: 'Ubah Password'
                 font_style: 'Subtitle1'
                 halign: 'left'
+                on_release:
+                    root.parent.parent.parent.parent.manager.transition.direction = "left" 
+                    root.parent.parent.parent.parent.manager.current = 'changepass'
                 IconLeftWidget:
                     icon: "key-change"
+                
+
             OneLineIconListItem:
                 text: 'Stop Loss'
                 font_style: 'Subtitle1'
@@ -72,7 +75,7 @@
                 width: root.width /1.2
                 on_release:
                     root.parent.parent.parent.parent.manager.transition.direction = "right" 
-                    root.parent.parent.parent.parent.manager.current = 'login'
+                    root.logout()
                 IconLeftWidget:
                     icon: "logout-variant"
                 

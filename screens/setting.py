@@ -13,4 +13,7 @@ class Setting(MDScreen):
         jsonFile.truncate()
         jsonFile.write(json.dumps(data))
         jsonFile.close()
+        self.parent.parent.parent.parent.manager.current = 'login'
         return jsonFile
+    
+    
