@@ -24,3 +24,4 @@ class Home(MDScreen):
         data = json.load(f)
         # print(data['nama'])
         return data['nama']
+

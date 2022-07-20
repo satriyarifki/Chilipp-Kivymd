@@ -9,3 +9,4 @@ from screens.setting import *
 from screens.signup import *
 from screens.stoploss import *
 from screens.profile import *
+from screens.changepass import *

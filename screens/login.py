@@ -1,3 +1,4 @@
+
 from audioop import add
 from email.mime import base
 from audioop import add
@@ -45,7 +46,9 @@ class Login(MDScreen):
                 toast('Berhasil Login')
                 self.manager.current = 'botnav'
             else:
+                toast('Gagal Login')
                 toast('Login Gagal! Cek email dan password!')
+
 
     def add_user(self, jsonData):
         jsonString = json.dumps(jsonData)
@@ -72,4 +75,6 @@ class Login(MDScreen):
 
     def logout(self):
         data = DictStore(self.user)
-        return data.delete()
+        return data.delete()   
+
+

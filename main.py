@@ -13,7 +13,6 @@ class WindowManager(ScreenManager):
 
 class Chilipp(MDApp):
     CLASSES = {
-
         'Splash': 'screens.splash',
         'Login': 'screens.login',
         'Signup': 'screens.signup',
@@ -24,7 +23,17 @@ class Chilipp(MDApp):
         'Setting': 'screens.setting',
         'Stoploss': 'screens.stoploss',
         'Profile': 'screens.profile',
-
+        'Splash': 'screens.splash',
+        'Login': 'screens.login',
+        'Signup': 'screens.signup',
+        'Botnav': 'screens.botnav',
+        'Home': 'screens.home',
+        'Calcu': 'screens.calcu',
+        'Cabaidet': 'screens.cabaidet',
+        'Setting': 'screens.setting',
+        'Stoploss': 'screens.stoploss',
+        'Changepass': 'screens.changepass',
+        'Profile': 'screens.profile',
     }
     AUTORELOADER_PATHS = [
         (".", {'recursive': True})
@@ -39,6 +48,7 @@ class Chilipp(MDApp):
         'kv/setting.kv',
         'kv/signup.kv',
         'kv/stoploss.kv',
+        'kv/changepass.kv',
         'kv/profile.kv',
     ]
 
@@ -59,6 +69,15 @@ class Chilipp(MDApp):
         ]
         for screen in screens:
             self.wm.add_widget(screen)
+
+        self.wm.add_widget(Botnav(name='botnav'))
+        self.wm.add_widget(Home(name='home'))
+        # self.wm.add_widget(Cabaidet(name='cabaidet'))
+        self.wm.add_widget(Calcu(name='calcu'))
+        self.wm.add_widget(Setting(name='setting'))
+        self.wm.add_widget(Stoploss(name='stoploss'))
+        self.wm.add_widget(Changepass(name='changepass'))
+        self.wm.add_widget(Profile(name='profile'))
         return self.wm
 
     def get_user():
