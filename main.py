@@ -23,6 +23,7 @@ class Chilipp(MDApp):
         'Cabaidet': 'screens.cabaidet',
         'Setting': 'screens.setting',
         'Stoploss': 'screens.stoploss',
+        'Profile': 'screens.profile',
 
     }
     AUTORELOADER_PATHS = [
@@ -38,6 +39,7 @@ class Chilipp(MDApp):
         'kv/setting.kv',
         'kv/signup.kv',
         'kv/stoploss.kv',
+        'kv/profile.kv',
     ]
 
     def build_app(self):
@@ -46,17 +48,21 @@ class Chilipp(MDApp):
             # Splash(name='splash'),
             # Login(name='login'),
             # Signup(name='signup'),
-            # Botnav(name='botnav'),
+            Botnav(name='botnav'),
             # Home(name='home'),
             # Cabaidet(name='cabaidet'),
-            # Calcu(name='calcu'),
+            Calcu(name='calcu'),
             # Setting(name='setting'),
+            # Profile(name='profile'),
             # Setting(name='setting'),
-            Stoploss(name='stoploss'),
+            # Stoploss(name='stoploss'),
         ]
         for screen in screens:
             self.wm.add_widget(screen)
         return self.wm
+
+    def get_user():
+        print('OK')
 
 
 if __name__ == '__main__':
