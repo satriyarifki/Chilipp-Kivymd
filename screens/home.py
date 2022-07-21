@@ -7,6 +7,7 @@ from kivymd.uix.behaviors import RectangularRippleBehavior
 from kivymd.uix.card import MDCard
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.behaviors import BackgroundColorBehavior
+from main import Chilipp
 
 
 class ShadowCard(MDCard, RoundedRectangularElevationBehavior):
@@ -18,10 +19,3 @@ class Home(MDScreen):
     def __init__(self, **kw):
         Builder.load_file("kv/home.kv")
         super().__init__(**kw)
-
-    def get_nama(self):
-        f = open('store/user.json')
-        data = json.load(f)
-        # print(data['nama'])
-        return data['nama']
-

@@ -31,8 +31,9 @@
                 font_style: 'Subtitle1'
                 halign: 'left'
                 on_release:
-                    root.parent.parent.parent.parent.manager.transition.direction = "left" 
-                    root.parent.parent.parent.parent.manager.current = 'profile'
+                    # root.parent.parent.parent.parent.manager.transition.direction = "left" 
+                    # root.parent.parent.parent.parent.manager.current = 'profile'
+                    root.load_user()
                 IconLeftWidget:
                     icon: "account-circle-outline"
                 

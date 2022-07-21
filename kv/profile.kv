@@ -1,79 +1,3 @@
-<Profile>:
-    md_bg_color: 1,1,1,1
-    MDIconButton:
-        icon: 'arrow-left'
-        custom_color: ("#3271F9")
-        on_release:
-            root.manager.transition.direction = "right"
-            root.manager.current = 'botnav'
-        pos_hint: {'center_x': 0.1,'center_y': 0.95}
-            
-    MDBoxLayout:
-        orientation: 'vertical'
-        padding: '30dp'
-        size_hint_y: None
-        height: root.height / 2
-        spacing: '15dp'
-        # md_bg_color: 0,1,0,1
-        y: 250
-        MDLabel:
-            text: "Profil Akun"
-            font_style: "H6"
-            size_hint_x: 1
-            width: root.width
-            pos_hint: {'center_x': 0.6, 'center_y': 0.2}
-            
-        MDTextField:
-            id: nama
-            hint_text: "Nama Anda"
-            max_text_length: 50
-            size_hint_x: 0.7
-            helper_text: "Nama"
-            mode: "round"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            
-            
-        MDTextField:
-            id: email
-            hint_text: "Email Anda"
-            max_text_length: 50
-            size_hint_x: 0.7
-            helper_text: "Email"
-            mode: "round"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            
-        MDTextField:
-            id: password
-            mode: "round"
-            size_hint_x: 0.7
-            hint_text: "Password"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            icon_right: "eye-off"
-            helper_text: "Password"
-            password: True
-        MDTextField:
-            id: password_confirm
-            mode: "round"
-            size_hint_x: 0.7
-            hint_text: "Konfirmasi Password"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            icon_right: "eye-off"
-            helper_text: "Password"
-            password: True
-            
-        MDFillRoundFlatButton:
-            text: "Update"
-            size_hint_x: 0.8
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            on_release:
-                # root.manager.transition.direction = "left"
-                # root.manager.current = 'botnav'
-                # root.register()
-                
 <Profile>: 
     md_bg_color: 1,1,1,1
 
@@ -97,24 +21,34 @@
             size_hint_y: None
             height: dp(0)
         MDLabel:
-            text: "Daftar"
+            text: "Profile Akun"
             font_style: "H5"
             bold: True
             pos_hint: {'center_x': 0.6}
             
-            
+        MDFillRoundFlatButton:
+            text: 'Tampilkan Profil'
+            md_bg_color: ("#3271F9")
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.7,'center_y': 0.0}
+            on_release:
+                root.show_profile()
         MDTextField:
-            hint_text: "Username"
+            id: email
+            hint_text: "Email"
             max_text_length: 30
             size_hint_x: 0.7
-            helper_text: "Username"
+            helper_text: "Email"
             mode: "round"
+            readonly: True
             fill_color_normal: ("ffffff")
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
 
         MDSeparator:
 
         MDTextField:
+            id: nama
             hint_text: "Nama Anda"
             max_text_length: 
             size_hint_x: 0.7
@@ -125,28 +59,20 @@
             
             
         MDTextField:
-            hint_text: "Email Anda"
+            id: alamat
+            hint_text: "Alamat Anda"
             max_text_length: 30
             size_hint_x: 0.7
-            helper_text: "Email"
-            mode: "round"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-
-        MDTextField:
-            hint_text: "Nomer Handphone"
-            max_text_length: 30
-            size_hint_x: 0.7
-            helper_text: "Nomor HP"
+            helper_text: "Alamat"
             mode: "round"
             fill_color_normal: ("ffffff")
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
         
         Widget:
             size_hint_y: None
-            height: dp(10)
+            height: dp(5)
 
-        MDFlatButton:
+        MDFillRoundFlatButton:
             text: 'Simpan'
             size_hint_x: 0.8
             md_bg_color: ("#3271F9")
@@ -154,5 +80,5 @@
             text_color: 1,1,1,1
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
             on_release:
-            
+                root.update_profile()
         

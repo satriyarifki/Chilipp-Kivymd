@@ -1,6 +1,8 @@
 from asyncio.windows_events import NULL
 from kivymd.uix.screen import MDScreen
 import json
+from screens.login import Login
+from screens.profile import Profile
 
 
 class Setting(MDScreen):
@@ -15,5 +17,3 @@ class Setting(MDScreen):
         jsonFile.close()
         self.parent.parent.parent.parent.manager.current = 'login'
         return jsonFile
-    
-    

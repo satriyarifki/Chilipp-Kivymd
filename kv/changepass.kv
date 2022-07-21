@@ -19,22 +19,12 @@
         y: 150
         MDLabel:
             text: "Ubah Password"
-            font_style: "H6"
-            size_hint_x: None
-            width: root.width
-        MDTextField:
-            mode: "round"
-            size_hint_x: 0.7
-            hint_text: "Password Lama"
-            fill_color_normal: ("ffffff")
-            pos_hint: {'center_x': 0.5,'center_y': 0.0}
-            icon_right: "eye-off"
-            helper_text: "Password"
-            password: True
-        
-        MDSeparator:
+            font_style: "H5"
+            bold: True
+            pos_hint: {'center_x': 0.6}
         
         MDTextField:
+            id: new_password
             mode: "round"
             size_hint_x: 0.7
             hint_text: "Password Baru"
@@ -42,9 +32,10 @@
             pos_hint: {'center_x': 0.5,'center_y': 0.0}
             icon_right: "eye-off"
             helper_text: "Password"
-            password: False
+            password: True
 
         MDTextField:
+            id: password_confirm
             mode: "round"
             size_hint_x: 0.7
             hint_text: "Konfirmasi Password"
@@ -58,12 +49,15 @@
             size_hint_y: None
             height: dp(0)
 
-        MDFlatButton:
-            text: 'Tetapkan'
-            size_hint_x: 1
+        MDFillRoundFlatButton:
+            text: 'Simpan'
+            size_hint_x: 0.8
             md_bg_color: ("#3271F9")
             theme_text_color: "Custom"
             text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
             on_release:
+                root.update_password()
+                root.clear_text()
             
             
