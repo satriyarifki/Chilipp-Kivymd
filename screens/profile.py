@@ -39,7 +39,7 @@ class Profile(MDScreen):
             # data = store.json()
 
             if store.status_code == 200:
-                self.update_json(dt, _nama, _email, _alamat, )
+                self.update_json(dt, _nama, _email, _alamat)
                 new = open('store/user.json')
                 data = json.load(new)
                 # print(data['nama'])

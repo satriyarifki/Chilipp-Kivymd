@@ -8,12 +8,6 @@ from system.base_url import base_url
 class Changepass(MDScreen):
     pass
 
-    def show_profile(self):
-        f = open('store/user.json')
-        data = json.load(f)
-        # print(data['nama'])
-        self.ids.user_id.text = str(data['id'])
-
     def update_password(self):
         f = open('store/user.json')
         data = json.load(f)

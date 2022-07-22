@@ -33,6 +33,7 @@
                 padding: '20dp'
                 spacing: '20dp'
                 MDTextField:
+                    id: stop_loss
                     hint_text: "Batas Stop Loss"
                     helper_text: "Batas 1-100 %"
                     mode: "round"
@@ -49,6 +50,9 @@
                 md_bg_color: ("#3271F9")
                 theme_text_color: "Custom"
                 text_color: 1,1,1,1
+                on_release:
+                    root.update_stoploss()
+                    root.clear_text()
                 
 
         

@@ -10,6 +10,12 @@
             root.manager.transition.direction = "right"
             root.manager.current = 'botnav'
 
+    MDIconButton:
+        icon: 'refresh'
+        custom_color: ("#3271F9")
+        pos_hint: {'center_x': 0.9,'center_y': 0.97}
+        on_release:
+            root.refresh()
     
     Image:
         source: "assets\img\cabe.png"
@@ -74,6 +80,7 @@
                     color: ("#999999")
 
                 MDLabel:
+                    id: stop_loss
                     halign: "center"
                     bold: True
                     text: "Rp. " + root.stop_loss()

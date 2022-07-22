@@ -281,3 +281,12 @@ class Cabaidet(MDScreen):
         price = predict_price - stop
         # print(data['nama'])
         return str(round(price, 3))
+
+    def refresh(self):
+        predict_price = predict_prices(ids, prices, [len(data)])
+        f = open('store/user.json')
+        r = json.load(f)
+        stop = (r['stop_loss'] / 100) * r['harga_awal']
+        price = predict_price - stop
+        # print(data['nama'])
+        self.ids.stop_loss.text = "Rp. " + str(round(price, 3))
