@@ -7,7 +7,6 @@ from kivymd.uix.behaviors import RectangularRippleBehavior
 from kivymd.uix.card import MDCard
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.behaviors import BackgroundColorBehavior
-from main import Chilipp
 import json
 import requests
 from system.base_url import base_url

@@ -71,7 +71,7 @@ class Chilipp(MDApp):
             self.wm.add_widget(screen)
 
         self.wm.add_widget(Botnav(name='botnav'))
-        # self.wm.add_widget(Home(name='home'))
+        self.wm.add_widget(Home(name='home'))
         # self.wm.add_widget(Cabaidet(name='cabaidet'))
         self.wm.add_widget(Calcu(name='calcu'))
         # self.wm.add_widget(Setting(name='setting'))
