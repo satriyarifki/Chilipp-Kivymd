@@ -1,12 +1,1 @@
-{
-    "id": 1,
-    "nama": "Saniassss",
-    "email": "dassdas",
-    "email_verified_at": 0,
-    "alamat": "Asik",
-    "stop_loss": 5,
-    "harga_awal": 19000,
-    "role": "",
-    "created_at": 0,
-    "updated_at": 0
-}
+{"id": 0, "nama": "", "email": "", "email_verified_at": 0, "alamat": "", "stop_loss": 0, "harga_awal": 0, "role": "", "created_at": 0, "updated_at": 0}

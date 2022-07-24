@@ -72,7 +72,7 @@ class Calcu(MDScreen):
         f = open('store/user.json')
         data = json.load(f)
         f.close()
-        
+
         if data['role'] != 'pengepul':
             toast('Fitur kalkulator hanya untuk Pengepul!')
         else:
